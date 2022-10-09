@@ -1,1 +1,1 @@
-# Mobile_Appium_Udemy
+# This is repository for research Appium from Course Udemy
