@@ -11,8 +11,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AppiumBasics {
-
+public class AppiumPractice {
     @Test
     public void AppiumTest() throws MalformedURLException {
         String appUrl = "/Users/khanhpham/Appium_Project/src/test/java/resources/ApiDemos-debug.apk";
@@ -33,10 +32,9 @@ public class AppiumBasics {
 
         //Actual Information
         //xpath, id, accessbilityId, classname, androidUIAutomator
-        driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Text']")).click();
 
         driver.quit();
         service.stop();
     }
-
 }
