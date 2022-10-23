@@ -1,6 +1,7 @@
-package khanhppn;
+package khanhppn.lesson;
 
 import io.appium.java_client.AppiumBy;
+import khanhppn.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
