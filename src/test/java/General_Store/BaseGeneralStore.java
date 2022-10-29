@@ -1,7 +1,9 @@
-package khanhppn;
+package General_Store;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -11,14 +13,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class BaseTest {
+public class BaseGeneralStore {
 
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
@@ -42,19 +43,17 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @BeforeMethod
-    public void beforeMethod() {
-        driver.findElement(AppiumBy.accessibilityId("App")).click();
-        driver.findElement(AppiumBy.accessibilityId("Alert Dialogs")).click();
-    }
-
-
     public void swipeAction(WebElement element, String direction) {
         ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "direction", direction,
                 "percent", 0.75
         ));
+    }
+
+    public WebElement scrollToAnElementByText(AndroidDriver driver, String text) {
+        return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector())" +
+                ".scrollIntoView(new UiSelector().text(\"" + text + "\"));"));
     }
 
     @AfterClass

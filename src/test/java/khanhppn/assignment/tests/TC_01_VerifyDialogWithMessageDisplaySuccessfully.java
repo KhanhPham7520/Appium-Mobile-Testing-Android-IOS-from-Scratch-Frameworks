@@ -12,7 +12,8 @@ public class TC_01_VerifyDialogWithMessageDisplaySuccessfully extends BaseTest {
         driver.findElement(AppiumBy.accessibilityId("OK Cancel dialog with a message")).click();
         Assert.assertTrue(driver.findElement(AppiumBy.id("android:id/alertTitle")).isDisplayed(),
                 "ERR - The title should be appeared");
-        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='OK']")).click();
+        String text = driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='OK']")).getText();
+        System.out.println(text);
     }
 
 }
