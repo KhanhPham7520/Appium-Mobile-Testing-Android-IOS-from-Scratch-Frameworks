@@ -48,11 +48,11 @@ public class BaseTest {
 
     @BeforeClass
     public void configureAppForAndroid() throws MalformedURLException {
-        String appUrl = "/Users/khanhpham/Appium_Project/src/test/java/resources/ApiDemos-debug.apk";
+        String appUrl = "/Volumes/KhanhPham/Appium/src/test/java/resources/ApiDemos-debug.apk";
 
         service = new AppiumServiceBuilder()
                 .withAppiumJS(new File(
-                        "/Users/khanhpham/node_modules/appium/node_modules/es6-mapify/build/lib/main.js"))
+                        "/Users/phamphannhatkhanh/node_modules/human-signals/build/src/main.js"))
                 .withIPAddress("127.0.0.1").usingPort(4723).build();
         service.start();
 
