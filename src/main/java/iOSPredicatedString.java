@@ -1,7 +1,4 @@
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.bys.builder.AppiumByBuilder;
-import org.openqa.selenium.WebElement;
 
 public class iOSPredicatedString {
 
