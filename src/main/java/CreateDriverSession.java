@@ -16,7 +16,7 @@ public class CreateDriverSession {
         URL url = new URL("http://0.0.0.0:4723/");
 
         switch (platformName) {
-            case "Android" -> {
+            case "Android":
                 caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
                 caps.setCapability(MobileCapabilityType.DEVICE_NAME, "KhanhPham");
                 caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
@@ -26,8 +26,7 @@ public class CreateDriverSession {
                         + File.separator + "resources" + File.separator + "ApiDemos-debug.apk";
                 caps.setCapability(MobileCapabilityType.APP, andAppUrl);
                 return new AndroidDriver(url, caps);
-            }
-            case "iOS" -> {
+            case "iOS":
                 caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
                 caps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 14");
                 caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
@@ -36,8 +35,8 @@ public class CreateDriverSession {
                         + File.separator + "resources" + File.separator + "UIKitCatalog-iphonesimulator.app";
                 caps.setCapability(MobileCapabilityType.APP, iOSAppUrl);
                 return new IOSDriver(url, caps);
-            }
-            default -> throw new Exception("Invalid platform");
+                default :
+            throw new Exception("Invalid platform");
         }
     }
 

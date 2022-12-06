@@ -7,6 +7,5 @@ public class iOSPredicatedString {
 
         //MobileElement myElement = (MobileElement) driver.findElementByAccessibilityId("Activity Indicators");
        // MobileElement myElement = (MobileElement) driver.findElementByAccessibilityId("Activity Indicators");
-        driver.findElementByAccessibilityId("Alert Views").click();
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 public class AndroidGestures {
     public static void main(String[] args) throws Exception {
         AppiumDriver driver = CreateDriverSession.initilizeDriver("Android");
-        swipeGesture(driver);
+        scrollGesture(driver);
     }
 
     public static void clickGesture(AppiumDriver driver){
@@ -39,6 +39,15 @@ public class AndroidGestures {
                 "elementId",((RemoteWebElement) element).getId(),
                 "direction", "left",
                 "percent", 0.75
+        ));
+    }
+
+    public static void scrollGesture(AppiumDriver driver){
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Views']")).click();
+        boolean canScrollMore = (boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+
+                "direction","down",
+                "percent",1.0
         ));
     }
 
