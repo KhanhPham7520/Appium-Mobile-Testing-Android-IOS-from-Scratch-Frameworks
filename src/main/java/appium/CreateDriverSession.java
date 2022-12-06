@@ -1,3 +1,5 @@
+package appium;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -34,6 +36,7 @@ public class CreateDriverSession {
                 String iOSAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
                         + File.separator + "resources" + File.separator + "UIKitCatalog-iphonesimulator.app";
                 caps.setCapability(MobileCapabilityType.APP, iOSAppUrl);
+              //  caps.setCapability("bundleId","com.apple.Maps");
                 return new IOSDriver(url, caps);
                 default :
             throw new Exception("Invalid platform");

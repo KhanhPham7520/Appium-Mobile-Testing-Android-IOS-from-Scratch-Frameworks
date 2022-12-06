@@ -1,3 +1,5 @@
+package appium;
+
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
@@ -45,7 +47,6 @@ public class AndroidGestures {
     public static void scrollGesture(AppiumDriver driver){
         driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Views']")).click();
         boolean canScrollMore = (boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-
                 "direction","down",
                 "percent",1.0
         ));

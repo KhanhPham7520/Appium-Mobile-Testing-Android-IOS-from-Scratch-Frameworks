@@ -1,5 +1,6 @@
+package appium;
+
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -10,7 +11,7 @@ import java.util.Map;
 public class IOSGestures {
     public static void main(String[] args) throws Exception {
         AppiumDriver driver = CreateDriverSession.initilizeDriver("iOS");
-        scrollDownGesture(driver);
+        pinchGesture(driver);
     }
 
     public static void swipeGesture(AppiumDriver driver){
@@ -35,5 +36,12 @@ public class IOSGestures {
        // params.put("direction", "down");
         params.put("toVisible", true); // scroll until element is presence on UI
         js.executeScript("mobile: scroll", params);
+    }
+    public static void pinchGesture(AppiumDriver driver){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Map<String, Object> params = new HashMap<>();
+        params.put("scale", 20);
+        params.put("velocity",2.2);
+        driver.executeScript("mobile: pinch", params);
     }
 }
