@@ -4,7 +4,6 @@ import appium.android.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.appmanagement.AndroidInstallApplicationOptions;
-import io.appium.java_client.android.appmanagement.AndroidTerminateApplicationOptions;
 import org.openqa.selenium.By;
 
 import java.io.File;
