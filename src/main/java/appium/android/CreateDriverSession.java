@@ -1,4 +1,4 @@
-package appium;
+package appium.android;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -26,6 +26,7 @@ public class CreateDriverSession {
                 caps.setCapability("newCommandTimeout", 300);
                 String andAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
                         + File.separator + "resources" + File.separator + "ApiDemos-debug.apk";
+                caps.setCapability("appPackage", "io.appium.android.apis");
                 caps.setCapability(MobileCapabilityType.APP, andAppUrl);
                 return new AndroidDriver(url, caps);
             case "iOS":

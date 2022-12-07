@@ -1,5 +1,6 @@
-package appium;
+package appium.iOS;
 
+import appium.android.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 
 public class iOSPredicatedString {

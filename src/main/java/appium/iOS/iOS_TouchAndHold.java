@@ -1,5 +1,6 @@
-package appium;
+package appium.iOS;
 
+import appium.android.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -17,7 +18,7 @@ public class iOS_TouchAndHold {
     public static void touchAndHold(AppiumDriver driver) {
         driver.findElementByAccessibilityId("Steppers").click();
 
-        WebElement element = driver.findElementByXPath("(//XCUIElementTypeButton[@name='Increment'])[1]");
+        WebElement element = driver.findElementByAccessibilityId("");
 
         Map<String, Object> params = new HashMap<>();
         params.put("elementId",((RemoteWebElement)element).getId());

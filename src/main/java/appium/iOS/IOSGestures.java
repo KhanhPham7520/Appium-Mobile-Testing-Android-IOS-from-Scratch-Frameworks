@@ -1,6 +1,8 @@
-package appium;
+package appium.iOS;
 
+import appium.android.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -11,7 +13,6 @@ import java.util.Map;
 public class IOSGestures {
     public static void main(String[] args) throws Exception {
         AppiumDriver driver = CreateDriverSession.initilizeDriver("iOS");
-        pinchGesture(driver);
     }
 
     public static void swipeGesture(AppiumDriver driver){
