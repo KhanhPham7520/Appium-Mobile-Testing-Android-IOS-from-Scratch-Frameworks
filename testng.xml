@@ -4,17 +4,16 @@
     <test name="Regression Test For Android">
         <parameter name="platformName" value="Android"/>
         <parameter name="platformVersion" value="13.0"/>
-        <parameter name="deviceName" value="KhanhPham"/>
+        <parameter name="deviceName" value="Any device name"/>
         <classes>
-            <class name=""/>
+            <class name="com.qa.tests.LoginTest"/>
         </classes>
-    </test> <!-- Test -->
-    <test name="Regression Test For iOS">
-        <parameter name="platformName" value="Android"/>
-        <parameter name="platformVersion" value="10.0"/>
-        <parameter name="deviceName" value="KhanhPham"/>
-        <classes>
-            <class name=""/>
-        </classes>
-    </test> <!-- Test -->
+    </test>
+<!--    <test name="Regression Test For iOS">-->
+<!--        <parameter name="platformName" value="Android"/>-->
+<!--        <parameter name="platformVersion" value="10.0"/>-->
+<!--        <parameter name="deviceName" value="KhanhPham"/>-->
+<!--        <classes>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite> <!-- Suite -->

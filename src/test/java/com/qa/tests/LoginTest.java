@@ -1,33 +1,29 @@
 package com.qa.tests;
 
+import com.qa.BaseTest;
 import com.qa.pages.LoginPage;
 import com.qa.pages.ProductPage;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
     LoginPage loginPage;
     ProductPage productPage;
 
-    @BeforeClass
-    public void beforeClass(){
-
-    }
-    @AfterClass
-    public void afterClass(){
-
-    }
-
     @BeforeMethod
     public void beforeMethod(){
-
+        loginPage = new LoginPage();
     }
 
     @AfterMethod
     public void afterMethod(){
 
+    }
+
+    @Test
+    public void invalidUserName(){
+        loginPage.enterPassword("invalidusername");
+        loginPage.enterPassword("secret_sauce");
+        productPage = loginPage.pressLoginBtn();
     }
 }
