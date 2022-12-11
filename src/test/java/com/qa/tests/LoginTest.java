@@ -24,11 +24,15 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void invalidUserName(){
+    public void invalidUserName() {
         loginPage.enterUsername("invalidusername");
         loginPage.enterPassword("secret_sauce");
-        productPage = loginPage.pressLoginBtn();
+      //  productPage = loginPage.pressLoginBtn();
         Assert.assertEquals(loginPage.getErrTxt(),
                 "Username and password do not match any user in this service.");
+
     }
+
+
+    //invalid password
 }

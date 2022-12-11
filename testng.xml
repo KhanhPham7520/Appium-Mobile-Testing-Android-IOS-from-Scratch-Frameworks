@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="false">
+    <listeners>
+        <listener class-name="com.qa.listeners.TestListener"/>
+    </listeners>
     <test name="Regression Test For Android">
         <parameter name="platformName" value="Android"/>
         <parameter name="platformVersion" value="13.0"/>
         <parameter name="deviceName" value="Any device name"/>
         <classes>
-            <class name="com.qa.tests.LoginTest"/>
+            <class name="com.qa.tests.LoginTest">
+                <methods>
+                    <include name="invalidUserName"/>
+                </methods>
+            </class>
         </classes>
     </test>
-<!--    <test name="Regression Test For iOS">-->
-<!--        <parameter name="platformName" value="Android"/>-->
-<!--        <parameter name="platformVersion" value="10.0"/>-->
-<!--        <parameter name="deviceName" value="KhanhPham"/>-->
-<!--        <classes>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    <test name="Regression Test For iOS">-->
+    <!--        <parameter name="platformName" value="Android"/>-->
+    <!--        <parameter name="platformVersion" value="10.0"/>-->
+    <!--        <parameter name="deviceName" value="KhanhPham"/>-->
+    <!--        <classes>-->
+    <!--        </classes>-->
+    <!--    </test>-->
 </suite> <!-- Suite -->
