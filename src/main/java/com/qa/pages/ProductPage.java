@@ -12,8 +12,9 @@ public class ProductPage extends BaseTest {
     private MobileElement productTitle;
 
 
-    public String getTitle(){
+    public String getProductTitle(){
         return getAttribute(productTitle,"text");
     }
+
 
 }

@@ -17,11 +17,10 @@ import org.testng.annotations.Parameters;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected static AppiumDriver driver;
-    protected Properties props;
+    protected static Properties props;
     InputStream inputStream;
 
     public BaseTest(){
@@ -33,8 +32,7 @@ public class BaseTest {
     public void beforeTest(String platformName, String platformVersion, String deviceName) throws Exception {
         props = new Properties();
         String propFileName = "config.properties";
-//        String propFileName = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-//                + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties";
+
         inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
         props.load(inputStream);
 
@@ -44,9 +42,6 @@ public class BaseTest {
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, props.getProperty("androidAutomationName"));
-  //      caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-//        String andAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-//                + File.separator + "resources" + File.separator + "app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk";
         caps.setCapability("appPackage", props.getProperty("androidAppPackage"));
         caps.setCapability("appActivity", props.getProperty("androidAppActivity"));
 
@@ -54,9 +49,8 @@ public class BaseTest {
         caps.setCapability(MobileCapabilityType.APP, appUrl);
 
         URL url = new URL(props.getProperty("appiumURL"));
+
         driver = new AndroidDriver(url, caps);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String sessionId = driver.getSessionId().toString();
     }
 
     public void waitForElementVisibility(MobileElement e){
